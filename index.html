@@ -145,28 +145,30 @@
 </section>
 
         <!-- Contact -->
-        <footer class="footer">
-  <div>
-    <h2 id="tel">Contact</h2>
-  </div>
-  <div class="social-icons">
-    <a href="https://www.instagram.com/mat_charts/" class="lienSC" target="_blank" title="Instagram">
-      <i class="fa fa-instagram scMedia"></i>
-    </a>
-    <a href="https://www.facebook.com/profile.php?id=61565653814244" class="lienSC" target="_blank" title="Facebook">
-      <i class="fa fa-facebook-f scMedia"></i>
-    </a>
-    <a href="https://www.youtube.com/@mat_charts" class="lienSC" target="_blank" title="YouTube">
-      <i class="fa fa-youtube-play scMedia"></i>
-    </a>
-    <a href="https://soundcloud.com/mat_charts" class="lienSC" target="_blank" title="SoundCloud">
-      <i class="fa fa-soundcloud scMedia"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/mathieu-chartier-mat-charts/" class="lienSC" target="_blank" title="LinkedIn">
-      <i class="fa fa-linkedin scMedia"></i>
-    </a>
-  </div>
-  <div class="copyright">
-    <p>© 2025 Mathieu Chartier</p>
-  </div>
-</footer>
+       // === Testimonial Carousel Logic ===
+const slides = document.querySelectorAll(".testimonial-slide");
+const prevBtn = document.querySelector(".left-arrow");
+const nextBtn = document.querySelector(".right-arrow");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
+  });
+}
+
+prevBtn.addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+nextBtn.addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+
+// Initialize the carousel on page load
+showSlide(currentSlide);
+
