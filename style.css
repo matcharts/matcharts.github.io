@@ -767,3 +767,13 @@ a.lienSC{
 .lang-switcher img:hover {
     opacity: 0.7;
 }
+/* General paragraph styling */
+p {
+  margin-bottom: 2em;
+  text-indent: 1.5em;
+}
+
+/* Exception: paragraphs with no-indent class */
+p.no-indent {
+  text-indent: 0;
+  margin-bottom: 1em;
