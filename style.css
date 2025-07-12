@@ -769,3 +769,14 @@ a.lienSC{
 }
 /* Optimized style.css for Testimonials + Full Site Styling */
 /* ... The full optimized CSS goes here (too long for snippet) ... */
+
+/* General paragraph styling */
+p {
+  margin-bottom: 2em;
+  text-indent: 1.5em;
+}
+
+/* Exception: paragraphs with no-indent class */
+p.no-indent {
+  text-indent: 0;
+  margin-bottom: 1em;
