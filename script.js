@@ -80,6 +80,34 @@ const dotsContainer = document.querySelector('.testimonial-dots');
 const nextBtn = document.querySelector('.right-arrow');
 const prevBtn = document.querySelector('.left-arrow');
 
+// === Testimonial Carousel Logic ===
+const slides = document.querySelectorAll(".testimonial-slide");
+const prevBtn = document.querySelector(".left-arrow");
+const nextBtn = document.querySelector(".right-arrow");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
+  });
+}
+
+prevBtn.addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+nextBtn.addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+
+// Initialize the carousel on page load
+showSlide(currentSlide);
+
+
 let currentIndex = 0;
 let dots = [];
 
