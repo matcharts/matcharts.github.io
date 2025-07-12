@@ -80,82 +80,60 @@ const dotsContainer = document.querySelector('.testimonial-dots');
 const nextBtn = document.querySelector('.right-arrow');
 const prevBtn = document.querySelector('.left-arrow');
 
-// === Testimonial Carousel Logic ===
-const slides = document.querySelectorAll(".testimonial-slide");
-const prevBtn = document.querySelector(".left-arrow");
-const nextBtn = document.querySelector(".right-arrow");
+document.addEventListener('DOMContentLoaded', () => {
+  // Testimonial carousel elements
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dotsContainer = document.querySelector('.testimonial-dots');
+  const nextBtn = document.querySelector('.right-arrow');
+  const prevBtn = document.querySelector('.left-arrow');
 
-let currentSlide = 0;
+  let currentIndex = 0;
+  let dots = [];
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) slide.classList.add("active");
-  });
-}
+  if (!slides.length || !dotsContainer || !nextBtn || !prevBtn) {
+    return; // exit if missing elements
+  }
 
-prevBtn.addEventListener("click", () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-});
-
-nextBtn.addEventListener("click", () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-});
-
-// Initialize the carousel on page load
-showSlide(currentSlide);
-
-
-let currentIndex = 0;
-let dots = [];
-
-// Génère les dots dynamiquement
-function generateDots() {
-  dotsContainer.innerHTML = '';
-  dots = [];
-
-  slides.forEach((_, i) => {
-    const dot = document.createElement('span');
-    dot.classList.add('dot');
-    if (i === currentIndex) dot.classList.add('active');
-
-    dot.addEventListener('click', () => {
-      changeSlide(i);
+  // Show slide by index
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
     });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
 
-    dotsContainer.appendChild(dot);
-    dots.push(dot);
-  });
-}
+  // Generate dots dynamically
+  function generateDots() {
+    dotsContainer.innerHTML = '';
+    dots = [];
 
-// Gère le changement avec animation
-function changeSlide(index) {
-  if (index === currentIndex) return;
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === currentIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => showSlide(i));
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    });
+  }
 
-  slides[currentIndex].classList.remove('active');
-  dots[currentIndex].classList.remove('active');
-
-  currentIndex = index;
-
-  slides[currentIndex].classList.add('active');
-  dots[currentIndex].classList.add('active');
-}
-
-if (nextBtn && prevBtn && slides.length && dotsContainer) {
   nextBtn.addEventListener('click', () => {
-    let nextIndex = (currentIndex + 1) % slides.length;
-    changeSlide(nextIndex);
+    const nextIndex = (currentIndex + 1) % slides.length;
+    showSlide(nextIndex);
   });
 
   prevBtn.addEventListener('click', () => {
-    let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-    changeSlide(prevIndex);
+    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
   });
 
   generateDots();
-}
+  showSlide(currentIndex);
+});
+
 
 
 //Fonction pour la page contact
