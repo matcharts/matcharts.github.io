@@ -22,20 +22,41 @@ z-index: 0;
 /* Page événement */
 /* SECTION TITRE PLEIN ÉCRAN */
 #soiree-hero1{
-    background-image: url('medias/Soiree/1/IMG_7942.JPG'); 
+    background-image: url('medias/Soiree/1/Thumbnail.JPG'); 
 }
 
 #soiree-hero2{
-    background-image: url('medias/Soiree/2/IMG_5892.JPG'); 
+    background-image: url('medias/Soiree/2/Thumbnail.JPG'); 
 }
 
 #soiree-hero3{
-    background-image: url('medias/Soiree/3/P1090464.JPG'); 
+    background-image: url('medias/Soiree/3/Thumbnail.JPG'); 
 }
 
 #soiree-hero4{
-    background-image: url('medias/Soiree/4/received_1282481762634923.jpeg'); 
+    background-image: url('medias/Soiree/4/Thumbnail.JPG'); 
 }
+
+#soiree-hero5{
+    background-image: url('medias/Soiree/5/Thumbnail.JPG'); 
+}
+
+#soiree-hero6{
+    background-image: url('medias/Soiree/6/Thumbnail.JPG'); 
+}
+
+#soiree-hero7{
+    background-image: url('medias/Soiree/7/Thumbnail.JPG'); 
+}
+
+#soiree-hero8{
+    background-image: url('medias/Soiree/8/Thumbnail.JPG'); 
+}
+
+#soiree-hero9{
+    background-image: url('medias/Soiree/9/Thumbnail.JPG'); 
+}
+
 
 .soiree-hero {
     height: 100vh;
@@ -358,23 +379,23 @@ body::before {
 }
 
 #E1{
-    background-image: url(medias/Soiree/1/Thumbnail.JPG);
+    background-image: url(medias/Soiree/1/Thumbnail);
 }
 
 #E2{
-    background-image: url(medias/Soiree/2/Thumbnail.JPEG);
+    background-image: url(medias/Soiree/2/Thumbnail);
 }
 
 #E3{
-    background-image: url(medias/Soiree/3/Thumbnail.JPG);
+    background-image: url(medias/Soiree/3/Thumbnail);
 }
 
 #E4{
-    background-image: url(medias/Soiree/4/Thumbnail.PNG);
+    background-image: url(medias/Soiree/4/Thumbnail);
 }
 
 #E5{
-    background-image: url(medias/Soiree/5/Thumbnail.PNG);
+    background-image: url(medias/Soiree/5/Thumbnail);
 }
 
 #E6{
