@@ -22,20 +22,41 @@ z-index: 0;
 /* Page événement */
 /* SECTION TITRE PLEIN ÉCRAN */
 #soiree-hero1{
-    background-image: url('medias/Soiree/1/IMG_7942.JPG'); 
+    background-image: url('medias/Soiree/1/Thumbnail'); 
 }
 
 #soiree-hero2{
-    background-image: url('medias/Soiree/2/IMG_5892.JPG'); 
+    background-image: url('medias/Soiree/2/Thumbnail'); 
 }
 
 #soiree-hero3{
-    background-image: url('medias/Soiree/3/P1090464.JPG'); 
+    background-image: url('medias/Soiree/3/Thumbnail'); 
 }
 
 #soiree-hero4{
-    background-image: url('medias/Soiree/4/received_1282481762634923.jpeg'); 
+    background-image: url('medias/Soiree/4/Thumbnail'); 
 }
+
+#soiree-hero5{
+    background-image: url('medias/Soiree/5/Thumbnail'); 
+}
+
+#soiree-hero6{
+    background-image: url('medias/Soiree/6/Thumbnail'); 
+}
+
+#soiree-hero7{
+    background-image: url('medias/Soiree/7/Thumbnail'); 
+}
+
+#soiree-hero8{
+    background-image: url('medias/Soiree/8/Thumbnail'); 
+}
+
+#soiree-hero9{
+    background-image: url('medias/Soiree/9/Thumbnail'); 
+}
+
 
 .soiree-hero {
     height: 100vh;
