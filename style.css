@@ -358,21 +358,40 @@ body::before {
 }
 
 #E1{
-    background-image: url(medias/Soiree/1/IMG_7942.JPG);
+    background-image: url(medias/Soiree/1/Thumbnail.JPG);
 }
 
 #E2{
-    background-image: url(medias/Soiree/2/IMG_5892.JPG);
+    background-image: url(medias/Soiree/2/Thumbnail.JPEG);
 }
 
 #E3{
-    background-image: url(medias/Soiree/3/P1090464.JPG);
+    background-image: url(medias/Soiree/3/Thumbnail.JPG);
 }
 
 #E4{
-    background-image: url(medias/Soiree/4/received_1282481762634923.jpeg);
+    background-image: url(medias/Soiree/4/Thumbnail.PNG);
 }
 
+#E5{
+    background-image: url(medias/Soiree/5/Thumbnail.PNG);
+}
+
+#E6{
+    background-image: url(medias/Soiree/6/Thumbnail.JPG);
+}
+
+#E7{
+    background-image: url(medias/Soiree/7/Thumbnail.JPG);
+}
+
+#E8{
+    background-image: url(medias/Soiree/8/Thumbnail.JPEG);
+}
+
+#E9{
+    background-image: url(medias/Soiree/9/Thumbnail.JPG);
+}
 .event-item {
     position: relative;
     background-size: cover;
