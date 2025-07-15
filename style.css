@@ -144,6 +144,14 @@ z-index: 0;
     transform: translateY(0);
 }
 
+.soiree-gallery video:nth-child(2n) {
+    grid-column: span 2;
+}
+
+.soiree-gallery video:nth-child(3n) {
+    grid-row: span 2;
+}
+
 .soiree-gallery video:hover {
     transform: scale(1.03);
 }
