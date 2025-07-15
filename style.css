@@ -89,30 +89,23 @@ z-index: 0;
 }
 
 /* SECTION GALERIE VERTICALE */
-..soiree-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 300px;
-    gap: 20px;
-    padding: 100px 5%;
-    background-color: #000;
+.soiree-gallery img,
+.soiree-gallery video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  transform: translateY(30px);
 }
 
-.soiree-gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
-    transform: translateY(30px);
-}
-
-.soiree-gallery img.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Make them fade in nicely and pop on hover */
+.soiree-gallery img:hover,
+.soiree-gallery video:hover {
+  transform: scale(1.03);
 }
 
 .soiree-gallery img:nth-child(2n) {
@@ -121,10 +114,6 @@ z-index: 0;
 
 .soiree-gallery img:nth-child(3n) {
     grid-row: span 2;
-}
-
-.soiree-gallery img:hover {
-    transform: scale(1.03);
 }
 
 @keyframes fadeIn {
