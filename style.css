@@ -115,14 +115,6 @@ z-index: 0;
     transform: translateY(0);
 }
 
-.soiree-gallery img:nth-child(2n) {
-    grid-column: span 2;
-}
-
-.soiree-gallery img:nth-child(3n) {
-    grid-row: span 2;
-}
-
 .soiree-gallery img:hover {
     transform: scale(1.03);
 }
