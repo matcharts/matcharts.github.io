@@ -115,12 +115,16 @@ z-index: 0;
     transform: translateY(0);
 }
 
-.soiree-gallery img:nth-child(2n) {
-    grid-column: span 2;
+.soiree-gallery img:nth-child(10n + 2),
+.soiree-gallery img:nth-child(10n + 4),
+.soiree-gallery img:nth-child(10n + 8),
+.soiree-gallery img:nth-child(10n + 9) {
+  grid-column: span 2;
 }
 
-.soiree-gallery img:nth-child(3n) {
-    grid-row: span 2;
+.soiree-gallery img:nth-child(10n + 3),
+.soiree-gallery img:nth-child(10n + 6) {
+  grid-row: span 2;
 }
 
 .soiree-gallery img:hover {
