@@ -127,6 +127,14 @@ z-index: 0;
     transform: scale(1.03);
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
 .soiree-gallery video {
     width: 100%;
     height: 100%;
@@ -148,6 +156,7 @@ z-index: 0;
     transform: scale(1.03);
 }
 
+<<<<<<< HEAD
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -179,6 +188,8 @@ z-index: 0;
     transform: scale(1.03);
 }
 
+>>>>>>> parent of a114d54 (Update style.css)
+=======
 >>>>>>> parent of a114d54 (Update style.css)
 
 body::before {
