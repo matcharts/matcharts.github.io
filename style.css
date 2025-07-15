@@ -379,23 +379,23 @@ body::before {
 }
 
 #E1{
-    background-image: url(medias/Soiree/1/Thumbnail);
+    background-image: url(medias/Soiree/1/Thumbnail.jpg);
 }
 
 #E2{
-    background-image: url(medias/Soiree/2/Thumbnail);
+    background-image: url(medias/Soiree/2/Thumbnail.jpg);
 }
 
 #E3{
-    background-image: url(medias/Soiree/3/Thumbnail);
+    background-image: url(medias/Soiree/3/Thumbnail.jpg);
 }
 
 #E4{
-    background-image: url(medias/Soiree/4/Thumbnail);
+    background-image: url(medias/Soiree/4/Thumbnail.jpg);
 }
 
 #E5{
-    background-image: url(medias/Soiree/5/Thumbnail);
+    background-image: url(medias/Soiree/5/Thumbnail.jpg);
 }
 
 #E6{
@@ -407,7 +407,7 @@ body::before {
 }
 
 #E8{
-    background-image: url(medias/Soiree/8/Thumbnail.JPEG);
+    background-image: url(medias/Soiree/8/Thumbnail.JPG);
 }
 
 #E9{
