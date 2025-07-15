@@ -101,6 +101,7 @@ z-index: 0;
 .soiree-gallery img.visible {
     opacity: 1;
     transform: translateY(0);
+}
 
 .soiree-gallery img,
 .soiree-gallery video {
