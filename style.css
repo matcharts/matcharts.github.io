@@ -378,41 +378,8 @@ body::before {
     scroll-snap-align: center; /* Centre chaque élément lors du défilement */
 }
 
-#E1{
-    background-image: url(medias/Soiree/1/Thumbnail.jpg);
-}
+<div class="carousel-item event-item" style="background-image: url('medias/Soiree/1/Thumbnail.jpg');">
 
-#E2{
-    background-image: url(medias/Soiree/2/Thumbnail.jpg);
-}
-
-#E3{
-    background-image: url(medias/Soiree/3/Thumbnail.jpg);
-}
-
-#E4{
-    background-image: url(medias/Soiree/4/Thumbnail.jpg);
-}
-
-#E5{
-    background-image: url(medias/Soiree/5/Thumbnail.jpg);
-}
-
-#E6{
-    background-image: url(medias/Soiree/6/Thumbnail.jpg);
-}
-
-#E7{
-    background-image: url(medias/Soiree/7/Thumbnail.jpg);
-}
-
-#E8{
-    background-image: url(medias/Soiree/8/Thumbnail.jpg);
-}
-
-#E9{
-    background-image: url(medias/Soiree/9/Thumbnail.jpg);
-}
 .event-item {
     position: relative;
     background-size: cover;
