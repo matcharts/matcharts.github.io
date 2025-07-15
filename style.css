@@ -89,7 +89,7 @@ z-index: 0;
 }
 
 /* SECTION GALERIE VERTICALE */
-.soiree-gallery {
+..soiree-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 300px;
