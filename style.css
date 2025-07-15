@@ -115,13 +115,6 @@ z-index: 0;
 }
 
 /* Make them fade in nicely and pop on hover */
-.soiree-gallery img:hover{
-  transform: scale(1.03);
-}
-
-.soiree-gallery img:nth-child(2n) {
-    grid-column: span 2;
-}
 
 .soiree-gallery img:nth-child(2n) {
     grid-column: span 2;
