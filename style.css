@@ -536,16 +536,6 @@ a.lienSC{
     background-color: #3d3636; /* Correspond au gris foncé de la capture d'écran 2 */
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
-  flex: 1;
-}
-
-/* Center the social icons in the middle column */
-.footer-center {
-  text-align: center;
-}
 .social-icons {
   display: flex;
   justify-content: center;
