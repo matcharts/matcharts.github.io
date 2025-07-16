@@ -532,7 +532,7 @@ a.lienSC{
     align-items: center;
     gap: 50px;
     padding: 10px;
-    text-align: center;
+    flex-wrap: wrap;
     background-color: #3d3636; /* Correspond au gris foncé de la capture d'écran 2 */
 }
 
