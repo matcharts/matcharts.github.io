@@ -540,7 +540,7 @@ a.lienSC{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* adjust spacing between icons */
+  gap: 10px; /* adjust spacing between icons */
 }
 
 /* Page Contact */
