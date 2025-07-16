@@ -535,6 +535,14 @@ a.lienSC{
     text-align: center;
     background-color: #3d3636; /* Correspond au gris foncé de la capture d'écran 2 */
 }
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* adjust spacing between icons */
+}
+
 /* Page Contact */
 .contact-section {
     padding: 130px 50px;
