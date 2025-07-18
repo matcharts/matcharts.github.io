@@ -539,7 +539,7 @@ body::before {
   text-align: center;
   padding: 20px;
   font-size: 54px;
-  margin-bottom: 60px; /* space from gallery above */
+  margin-bottom: 45px; /* space from gallery above */
 }
 
 i.scMedia{
