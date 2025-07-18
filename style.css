@@ -548,6 +548,8 @@ i.scMedia{
     font-size: 45px;
     margin: 0px;
     transition: color 0.3s;
+    padding: 0;
+    line-height: 1;           /* Prevent spacing artifacts */
 }
 
 i.scMedia:hover{
