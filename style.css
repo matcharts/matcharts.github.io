@@ -165,8 +165,10 @@ z-index: 0;
 
 .partenaires-gallery img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* Let image resize naturally */
+  object-fit: contain; /* Show full image, even if there’s empty space */
+  aspect-ratio: 1 / 1; /* Optional: forces consistent square layout */
+  background-color: #f0f0f0; /* Optional: fill background where image doesn’t cover */
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, opacity 0.3s ease;
