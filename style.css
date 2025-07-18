@@ -546,7 +546,7 @@ body::before {
 i.scMedia{
     color: rgb(187, 187, 187);
     font-size: 45px;
-    margin: 0 10px;
+    margin: 0px;
     transition: color 0.3s;
 }
 
@@ -556,6 +556,14 @@ i.scMedia:hover{
 
 a.lienSC{
     text-decoration: none;
+      width: 50px;              /* Ensures all icons take equal space */
+  height: 50px;
+  display: flex;            /* Center the icon inside the link */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 #tel{
