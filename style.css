@@ -587,6 +587,7 @@ a.lienSC{
 }
 
 .social-icons {
+  color: #3d3636; 
   display: flex;
   justify-content: center;
   align-items: center;
