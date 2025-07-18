@@ -582,6 +582,7 @@ a.lienSC{
   justify-content: center;
   align-items: center;
   gap: 10px; /* adjust spacing between icons */
+  width: 100%
 }
 
 /* Page Contact */
