@@ -762,6 +762,9 @@ a.lienSC{
     z-index: 0;
   }
 
+  pointer-events: none;
+}
+
   .testimonial-slide.active {
     opacity: 1;
     z-index: 1;
