@@ -144,6 +144,18 @@ z-index: 0;
     transform: scale(1.03);
 }
 
+@media (max-width: 768px) {
+  .soiree-gallery img,
+  .soiree-gallery video   {
+    display: block;
+    width: 100%; /* Makes images take full width */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 20px;
+    padding: 100px 5%;
+    background-color: #000;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -840,16 +852,6 @@ a.lienSC{
     .nav_links.active {
         display: flex; /* Affiche le menu mobile lorsqu'il est activé */
     }
-        
-  .soiree-gallery {
-    display: block; /* Stacks images vertically */
-  }
-
-  .soiree-gallery img,
-  .soiree-gallery video;  {
-    width: 100%; /* Makes images take full width */
-    margin-bottom: 20px; /* Spacing between images */
-  }
 }
 
 @media (max-width: 1024px) {
