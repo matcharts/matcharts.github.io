@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <!-- Header/Navigation Bar -->
+            <header class="navBar">
+                <div class="logo">
+                    <a href="indexEng.html">Mat Charts</a>
+                </div>
+                <nav class="nav_links">
+                    <a href="indexEng.html">Home</a>
+                    <a href="#descendAbout" class="descendsAbout">About</a>
+                    <a href="#descendEvent" class="descendsEvent">Events</a>
+                    <a href="contactEng.html">Contact</a>
+                </nav>
+                <div class="lang-switcher">
+                    <a href=".html" title="Version française"> <!-- remplacer .html par num de l'événement (ex.href="event123.html") -->
+                        <img src="https://flagcdn.com/fr.svg" alt="FR">
+                    </a>
+                </div>
+            </header>
+            
+            </div>
+
+            <!-- Titre plein écran -->
+            <section class="soiree-hero" id="soiree-hero1"> <!-- mettre numero de l'evenement (ex.id="soiree-hero12345") -->
+                <h1>Crowd Reaction</h1>   <!-- mettre nom de l'evenement -->
+            </section>
+
+            <!-- Galerie en-dessous --> 
+            <section class="soiree-gallery">    <!-- remplacer avec ctrl f /1/ par /num d'evenement/ (ex. /123/) -->
+                <video controls><source src="medias/Soiree/1/vid1.mp4"></video>
+                <video controls><source src="medias/Soiree/1/vid2.mp4"></video>
+                <img src="medias/Soiree/1/img3.jpg" alt="Photo 3">
+                <video controls><source src="medias/Soiree/1/vid4.mp4"></video>
+                <img src="medias/Soiree/1/img5.jpg" alt="Photo 5">
+                <video controls><source src="medias/Soiree/1/vid6.mp4"></video>
+                <img src="medias/Soiree/1/img7.jpg" alt="Photo 7">
+                <video controls><source src="medias/Soiree/1/vid8.mp4"></video>
+                <img src="medias/Soiree/1/img9.jpg" alt="Photo 9">
+                <video controls><source src="medias/Soiree/1/vid10.mp4"></video>
+
+            
+            </section>
+
+        </div>
+                
+
+            <!-- Contact -->
+                <!-- Footer -->
+                <footer class="footer">
+                    <div>
+                        <h2 id="tel">Contact</h2>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/mat_charts/" class="lienSC">
+                            <i class="fa fa-instagram scMedia"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61565653814244" class="lienSC">
+                            <i class="fa fa-facebook-f scMedia"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@mat_charts" class="lienSC">
+                            <i class="fa fa-youtube-play scMedia"></i>
+                        </a>
+                    </div>
+                    <div class="copyright">
+                        <p>© 2025 Mathieu Chartier</p>
+                    </div>
+                </footer>
+
+                <!-- Script -->
+                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                <script src="script.js"></script>
+        </div>
+    </body>
+</html>
