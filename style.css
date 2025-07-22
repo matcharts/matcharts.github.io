@@ -144,6 +144,20 @@ z-index: 0;
     transform: scale(1.03);
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 768px) {
+  .soiree-gallery img,
+  .soiree-gallery video   {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 20px;
+    padding: 100px 5%;
+    background-color: #000;
+}
+
+>>>>>>> parent of 6ca7902 (Update style.css)
 @keyframes fadeIn {
     0% {
         opacity: 0;
