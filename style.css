@@ -841,14 +841,17 @@ a.lienSC{
         display: flex; /* Affiche le menu mobile lorsqu'il est activé */
     }
         
-  .soiree-gallery {
-    display: block; /* Stacks images vertically */
+    .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .soiree-gallery img,
-  .soiree-gallery video;  {
-    width: 100%; /* Makes images take full width */
-    margin-bottom: 20px; /* Spacing between images */
+  .gallery img,
+  .gallery video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
 
@@ -899,7 +902,6 @@ a.lienSC{
     opacity: 0.7;
 }
 /* Optimized style.css for Testimonials + Full Site Styling */
-/* ... The full optimized CSS goes here (too long for snippet) ... */
 
 /* General paragraph styling */
 p {
