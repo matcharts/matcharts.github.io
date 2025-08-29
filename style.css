@@ -786,6 +786,10 @@ a.lienSC{
     z-index: 0;
   }
 
+  .testimonial-slide p {
+    text-indent: 0;
+  }
+
   .testimonial-slide.active {
     opacity: 1;
     z-index: 1;
