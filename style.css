@@ -859,7 +859,7 @@ a.lienSC{
 @media (max-width: 1024px) {
 
     .hero{
-        background-image: none;
+        background-image: url('medias/logo.jpg');
         background-color: black;
     }
 
