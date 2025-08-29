@@ -279,6 +279,7 @@ body::before {
 .hero p{
     font-size: 24px;
     margin-bottom: 20px;
+    text-indent: 0; /* Ensure hero paragraph text is centered */
 }
 
 .resa{
