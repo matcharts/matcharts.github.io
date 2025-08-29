@@ -24,8 +24,7 @@ const prevButton = document.querySelector('.carousel-prev');
 const nextButton = document.querySelector('.carousel-next');
 
 if (carousel && prevButton && nextButton) {
-    const scrollAmount = 960; // Largeur d'un élément (300px) + gap (20px)
-    const items = carousel.querySelectorAll('.carousel-item');
+    const scrollAmount = carousel.clientWidth; // Largeur visible du carrousel
 
     // Bouton "Suivant"
     nextButton.addEventListener('click', () => {
