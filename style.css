@@ -777,6 +777,11 @@ a.lienSC{
     padding: 0 20px;
   }
 
+.arrow {
+  position: relative;
+  z-index: 2;
+}
+
   .arrow:hover {
     color: white;
   }
