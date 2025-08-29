@@ -873,13 +873,6 @@ a.lienSC{
     .nav_links.active {
         display: flex; /* Affiche le menu mobile lorsqu'il est activé */
     }
-
-    .hero{
-        background-image: url('medias/logo.jpg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: black;
 }
 
 @media (max-width: 1024px) {
