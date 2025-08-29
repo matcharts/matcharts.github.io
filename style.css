@@ -426,6 +426,14 @@ body::before {
     scroll-snap-align: center; /* Centre chaque élément lors du défilement */
 }
 
+@media (max-width: 600px) {
+    .carousel-link,
+    .carousel-item {
+        flex: 0 0 80vw;
+        height: auto;
+    }
+}
+
 #E1{
     background-image: url(medias/Soiree/1/Thumbnail.jpg);
 }
