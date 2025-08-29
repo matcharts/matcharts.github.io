@@ -430,6 +430,7 @@ body::before {
     .carousel-link,
     .carousel-item {
         flex: 0 0 80vw;
+        height: 200px;
     }
 }
 
