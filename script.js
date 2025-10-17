@@ -66,7 +66,6 @@ document.querySelectorAll('.descendsAbout').forEach(link => {
 
 document.querySelectorAll('.descendsEvent').forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault(); // Empêche le jump instantané
     const target = document.querySelector('#descendEvent');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
