@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 html, body {
@@ -23,6 +24,10 @@ z-index: 0;
 /* SECTION TITRE PLEIN ÉCRAN */
 #soiree-hero1{
     background-image: url('medias/Soiree/1/Thumbnail.jpg'); 
+}
+
+.boutonLangue{
+    color: #000;
 }
 
 #soiree-hero2{
@@ -591,6 +596,11 @@ a.lienSC{
   margin: 0;
 }
 
+#linkContact{
+    text-align: left;
+    color: white;
+}
+
 #tel{
     text-align: left;
     color: white;
@@ -934,3 +944,4 @@ p {
 p.no-indent {
   text-indent: 0;
   margin-bottom: 1em;
+}

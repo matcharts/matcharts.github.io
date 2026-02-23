@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Accueil</title>
-</head>
-<body>
-    <div class="page-container">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Confirmation</title>
+    </head>
+
+        <body>
+        <div class="page-container">
         <div class="content-wrap">
-            <!-- Header/Navigation Bar -->
-            <header class="navBar">
-                <div class="logo">
-                    <a href="index.html">Mat Charts</a>
-                </div>
-                  <nav class="nav_links">
-                    <a href="index.html">Accueil</a>
-                    <a href="index.html#descendAbout" class="descends">À propos</a>
-                    <a href="index.html#descendEvent">Événements</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-                <div class="lang-switcher">
-                    <a href="confirmeMailENG.html" title="English version">
-                        <img src="https://flagcdn.com/ca.svg" alt="EN">
-                    </a>
-                </div>
-            </header>
 
-    <div id="confirme">
-        <h2>Merci pour votre message !</h2>
-        <p>Nous avons bien reçu vos informations et vous contacterons bientôt.</p>
-        <a href="index.html" class="resa" style="margin-top: 30px; display: inline-block;">Retour à l'accueil</a>
-    </div>
+        <!-- NAV -->
+        <header class="navBar">
+        <div class="logo">
+            <a id="logoLink">Mat Charts</a>
+        </div>
 
-        <!-- Contact -->
+        <nav class="nav_links">
+            <a id="linkHome"></a>
+            <a id="linkAbout"></a>
+            <a id="linkEvent"></a>
+            <a id="linkContact"></a>
+        </nav>
+
+        <div class="lang-switcher">
+            <button id="switchLang">EN</button>
+        </div>
+        </header>
+
+        <!-- CONFIRMATION -->
+        <div id="confirme">
+        <h2 id="confirmTitle"></h2>
+        <p id="confirmText"></p>
+        <a id="backHome" class="resa" style="margin-top:30px;display:inline-block;"></a>
+        </div>
+
+        </div>
+
+        <!-- FOOTER -->
         <footer class="footer">
-            <div>
-                <h2 id="tel"></h2>  <!-- mettre du texte entre >< pour ajouter à gauche du footer -->
-            </div>
-            <div class="social-icons">
-                <a href="" class="https://www.instagram.com/mat_charts/">
-                    <i class="fa fa-instagram scMedia"></i>
-                </a>
-                <a href="" class="https://www.facebook.com/profile.php?id=61565653814244">
-                    <i class="fa fa-facebook-f scMedia"></i>
-                </a>
-                <a href="" class="https://www.youtube.com/@mat_charts">
-                    <i class="fa fa-youtube-play scMedia"></i>
-                </a>
-            </div>
-            <div class="copyright">
-                <p>© 2025 Louis Duong</p>
-            </div>
+        <div><h2>Contact</h2></div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/mat_charts/"><i class="fa fa-instagram scMedia"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61565653814244"><i class="fa fa-facebook-f scMedia"></i></a>
+            <a href="https://www.youtube.com/@mat_charts"><i class="fa fa-youtube-play scMedia"></i></a>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Mathieu Chartier</p>
+        </div>
         </footer>
-    
+
+        </div>
+
+    <script src="confirmeMail.js" defer></script>
 </body>
 </html>
