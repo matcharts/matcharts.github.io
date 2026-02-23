@@ -16,7 +16,7 @@ const textData = {
     submit: "Envoyer",
     switch: "EN",
     index: "index.html",
-    next: "./confirmeMail.html"
+    next: "https://matcharts.github.io/confirmeMail.html"
   },
   en: {
     nav: ["Home", "About", "Events", "Contact"],
@@ -32,7 +32,7 @@ const textData = {
     submit: "Send",
     switch: "FR",
     index: "index.html",
-    next: "./confirmeMail.html"
+    next: "https://matcharts.github.io/confirmeMail.html"
   }
 };
 
