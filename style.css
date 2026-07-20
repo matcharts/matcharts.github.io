@@ -944,3 +944,10 @@ p.no-indent {
   text-indent: 0;
   margin-bottom: 1em;
 }
+
+#soiree-hero8{
+    background-image: url('medias/Soiree/8/Thumbnail.jpg');
+}
+#E8{
+    background-image: url(medias/Soiree/8/Thumbnail.jpg);
+}

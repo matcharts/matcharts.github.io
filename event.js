@@ -216,7 +216,16 @@ const eventsData = {
             { type: "img", src: "./medias/Soiree/7/vieux-port.jpg" },
             { type: "img", src: "./medias/Soiree/7/winnies.jpg" }
         ]
-    }
+    },
+
+        8: {
+        title: "Test",
+        medias: [
+            { type: "img", src: "./medias/Soiree/8/Thumbnail.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img1.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img2.jpg" }
+        ]
+    },
     
 };
 
