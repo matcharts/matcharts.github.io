@@ -242,7 +242,7 @@ const siteData = {
             hero: ["DJ for your next event","Book Now"],
             events: [
                 "Events", "Crowd Reaction", "Bal season 2025", 
-                "Pangea","Magnificent Trash","Ping Pong Club","Corporate","Partners", "Yes",
+                "Pangea","Magnificent Trash","Ping Pong Club","Corporate","Partners", "Yes"
             ],
             infos: [
                 "Mat Charts was born from a simple desire: share the music and energy that he likes to experience as an event-goer.",
