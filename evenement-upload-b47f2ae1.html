@@ -325,7 +325,7 @@ generateBtn.addEventListener("click", async () => {
         medias: [
             ${mediaLines.join(",\n            ")}
         ]
-    },`;
+    }`;
 
   document.getElementById("snippetCss").textContent =
 `#soiree-hero${eventId}{
@@ -335,8 +335,8 @@ generateBtn.addEventListener("click", async () => {
     background-image: url(medias/Soiree/${eventId}/Thumbnail.jpg);
 }`;
 
-  document.getElementById("snippetFr").textContent = `"${escapeJs(titreFr)}",`;
-  document.getElementById("snippetEn").textContent = `"${escapeJs(titreEn)}",`;
+  document.getElementById("snippetFr").textContent = `"${escapeJs(titreFr)}"`;
+  document.getElementById("snippetEn").textContent = `"${escapeJs(titreEn)}"`;
   document.getElementById("zipName").textContent = zipName;
 
   document.getElementById("result").style.display = "block";

@@ -218,7 +218,7 @@ const siteData = {
             hero: ["DJ pour votre prochain événement","Réserver"],
             events: [
                 "Événements récents", "Réactions de foule", "Saison des bals 2025", 
-                "Pangea","Poubelle Magnifique","Ping Pong Club","Corporatif","Partenaires", "Oui"
+                "Pangea","Poubelle Magnifique","Ping Pong Club","Corporatif","Partenaires"
             ],
             infos: [
                 "Le personnage de Mat Charts est né d'une idée : partager la musique et l’ambiance qu’il aime vivre en tant que spectateur.",
@@ -242,7 +242,7 @@ const siteData = {
             hero: ["DJ for your next event","Book Now"],
             events: [
                 "Events", "Crowd Reaction", "Bal season 2025", 
-                "Pangea","Magnificent Trash","Ping Pong Club","Corporate","Partners", "Yes"
+                "Pangea","Magnificent Trash","Ping Pong Club","Corporate","Partners"
             ],
             infos: [
                 "Mat Charts was born from a simple desire: share the music and energy that he likes to experience as an event-goer.",
