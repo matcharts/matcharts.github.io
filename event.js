@@ -225,7 +225,7 @@ const eventsData = {
             { type: "img", src: "./medias/Soiree/8/img1.jpg" },
             { type: "img", src: "./medias/Soiree/8/img2.jpg" }
         ]
-    },
+    }
     
 };
 
