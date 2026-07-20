@@ -216,7 +216,7 @@ const eventsData = {
             { type: "img", src: "./medias/Soiree/7/vieux-port.jpg" },
             { type: "img", src: "./medias/Soiree/7/winnies.jpg" }
         ]
-    }
+    },
     
 };
 

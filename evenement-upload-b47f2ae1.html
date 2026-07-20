@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Ajouter un événement</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+  body { background: #111; color: #eee; min-height: 100vh; padding: 40px 20px 100px; }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  h1 { color: #d4b992; font-size: 28px; margin-bottom: 8px; }
+  p.lead { color: #aaa; margin-bottom: 30px; font-size: 14px; }
+  .card { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+  label { display: block; font-size: 13px; color: #d4b992; margin-bottom: 6px; margin-top: 16px; }
+  label:first-child { margin-top: 0; }
+  input[type="text"], input[type="number"], input[type="password"] {
+    width: 100%; padding: 10px 12px; background: #0d0d0d; border: 1px solid #444;
+    color: #eee; border-radius: 4px; font-size: 15px;
+  }
+  input:focus { outline: none; border-color: #d4b992; }
+  .hint { font-size: 12px; color: #777; margin-top: 4px; }
+  .dropzone {
+    border: 2px dashed #555; border-radius: 8px; padding: 40px 20px; text-align: center;
+    color: #888; cursor: pointer; transition: border-color .2s, background .2s;
+  }
+  .dropzone.dragover { border-color: #d4b992; background: #1f1a12; color: #d4b992; }
+  .previews { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin-top: 20px; }
+  .thumb { position: relative; border-radius: 6px; overflow: hidden; background: #000; border: 2px solid transparent; }
+  .thumb img { width: 100%; height: 110px; object-fit: cover; display: block; }
+  .thumb .bg-badge {
+    position: absolute; top: 6px; left: 6px; background: rgba(0,0,0,.75); color: #d4b992;
+    font-size: 10px; padding: 3px 6px; border-radius: 3px; cursor: pointer; user-select: none;
+  }
+  .thumb.selected { border-color: #d4b992; }
+  .thumb.selected .bg-badge { background: #d4b992; color: #000; }
+  .thumb .remove {
+    position: absolute; top: 6px; right: 6px; background: rgba(0,0,0,.75); color: #fff;
+    width: 20px; height: 20px; border-radius: 50%; text-align: center; line-height: 20px;
+    cursor: pointer; font-size: 13px;
+  }
+  button.primary {
+    background: #d4b992; color: #000; border: none; padding: 12px 24px; border-radius: 4px;
+    font-size: 15px; font-weight: bold; cursor: pointer; margin-top: 20px;
+  }
+  button.primary:hover { background: #c3a26f; }
+  button.primary:disabled { background: #555; color: #999; cursor: not-allowed; }
+  .existing { font-size: 12px; color: #888; line-height: 1.8; margin-top: 8px; }
+  pre {
+    background: #0d0d0d; border: 1px solid #333; border-radius: 6px; padding: 14px;
+    overflow-x: auto; font-size: 12px; color: #ccd; white-space: pre-wrap; word-break: break-word;
+  }
+  .copy-btn {
+    background: #333; color: #eee; border: 1px solid #555; padding: 6px 12px; border-radius: 4px;
+    cursor: pointer; font-size: 12px; margin-bottom: 8px;
+  }
+  .copy-btn:hover { background: #444; }
+  .steps li { margin-bottom: 10px; color: #ccc; font-size: 14px; }
+  #gate { max-width: 360px; margin: 100px auto; text-align: center; }
+  #gate button.primary { width: 100%; }
+  #app { display: none; }
+  .error { color: #e88; font-size: 13px; margin-top: 8px; }
+  .filename-tag { font-size: 12px; color: #d4b992; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <h1>Accès protégé</h1>
+  <p class="lead">Cette page sert à préparer un nouvel événement pour le site. Entre le mot de passe pour continuer.</p>
+  <input type="password" id="pwInput" placeholder="Mot de passe">
+  <button class="primary" id="pwSubmit">Entrer</button>
+  <p class="error" id="pwError" style="display:none;">Mot de passe incorrect.</p>
+</div>
+
+<div id="app">
+<div class="wrap">
+  <h1>Ajouter un nouvel événement</h1>
+  <p class="lead">Dépose les photos, choisis la photo de fond, remplis les titres, puis clique sur « Générer ». Tu obtiendras un ZIP d'images redimensionnées à ajouter au dépôt, ainsi que le code à coller dans le site.</p>
+
+  <div class="card">
+    <label>Titre de l'événement (affiché en haut de la page événement, une seule langue)</label>
+    <input type="text" id="titre" placeholder="Ex : Soirée d'ouverture 2026">
+
+    <label>Nom court dans le carrousel — Français</label>
+    <input type="text" id="titreCarouselFr" placeholder="Ex : Soirée d'ouverture">
+
+    <label>Nom court dans le carrousel — English</label>
+    <input type="text" id="titreCarouselEn" placeholder="Ex : Opening Night">
+
+    <label>Numéro du prochain événement</label>
+    <input type="number" id="eventId" value="8" min="1">
+    <p class="hint">Événements déjà utilisés — ne choisis pas un de ces numéros :</p>
+    <p class="existing">
+      1 – Réactions de foule · 2 – Saison des bals 2025 · 3 – Pangea · 4 – Poubelle Magnifique ·
+      5 – Ping Pong Club · 6 – Corporatif · 7 – Partenaires
+    </p>
+  </div>
+
+  <div class="card">
+    <label>Photos de l'événement</label>
+    <div class="dropzone" id="dropzone">
+      Glisse-dépose tes photos ici, ou clique pour les choisir<br>
+      <span style="font-size:12px;">(JPEG / PNG — elles seront automatiquement redimensionnées)</span>
+      <input type="file" id="fileInput" accept="image/*" multiple style="display:none;">
+    </div>
+    <p class="hint">Clique sur « Fond » sur une photo pour la définir comme photo de fond (miniature du carrousel + fond de la page événement). Une seule photo peut être choisie.</p>
+    <div class="previews" id="previews"></div>
+  </div>
+
+  <button class="primary" id="generateBtn" disabled>Générer le ZIP et le code</button>
+  <p class="error" id="genError" style="display:none;"></p>
+
+  <div class="card" id="result" style="display:none;">
+    <h1 style="font-size:18px;">C'est prêt !</h1>
+    <ol class="steps">
+      <li>Le fichier <b id="zipName"></b> a été téléchargé. Décompresse-le et place le dossier obtenu dans <code>medias/Soiree/</code> à la racine du site.</li>
+      <li>Ouvre <code>event.js</code> et colle ce bloc juste avant la dernière accolade <code>};</code> qui ferme <code>eventsData</code> (ajoute une virgule après l'accolade de l'événement précédent) :</li>
+    </ol>
+    <button class="copy-btn" data-target="snippetEventJs">Copier</button>
+    <pre id="snippetEventJs"></pre>
+
+    <ol class="steps" start="3">
+      <li>Ouvre <code>style.css</code> et colle ce bloc n'importe où dans le fichier :</li>
+    </ol>
+    <button class="copy-btn" data-target="snippetCss">Copier</button>
+    <pre id="snippetCss"></pre>
+
+    <ol class="steps" start="4">
+      <li>Ouvre <code>script.js</code>, trouve le tableau <code>events</code> dans la section <code>fr:</code> et ajoute cette ligne à la fin du tableau :</li>
+    </ol>
+    <button class="copy-btn" data-target="snippetFr">Copier</button>
+    <pre id="snippetFr"></pre>
+
+    <ol class="steps" start="5">
+      <li>Fais la même chose dans le tableau <code>events</code> de la section <code>en:</code> :</li>
+    </ol>
+    <button class="copy-btn" data-target="snippetEn">Copier</button>
+    <pre id="snippetEn"></pre>
+
+    <ol class="steps" start="6">
+      <li>Enregistre, puis commit + push (ou demande à Claude Code de le faire).</li>
+    </ol>
+  </div>
+</div>
+</div>
+
+<script>
+// ---------- Gate ----------
+const CORRECT_HASH = "4eaac63253ec543379dc73c19dea43936679edca0d7bd3d315b3d1e578523410";
+
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function tryUnlock() {
+  const pw = document.getElementById("pwInput").value;
+  const hash = await sha256Hex(pw);
+  if (hash === CORRECT_HASH) {
+    sessionStorage.setItem("evtUploadUnlocked", "1");
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("app").style.display = "block";
+  } else {
+    document.getElementById("pwError").style.display = "block";
+  }
+}
+
+document.getElementById("pwSubmit").addEventListener("click", tryUnlock);
+document.getElementById("pwInput").addEventListener("keydown", e => { if (e.key === "Enter") tryUnlock(); });
+
+if (sessionStorage.getItem("evtUploadUnlocked") === "1") {
+  document.getElementById("gate").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
+
+// ---------- Upload / preview ----------
+const MAX_DIM = 1600;
+const QUALITY = 0.78;
+
+let files = []; // { file, url, id }
+let bgId = null;
+let counter = 0;
+
+const dropzone = document.getElementById("dropzone");
+const fileInput = document.getElementById("fileInput");
+const previews = document.getElementById("previews");
+const generateBtn = document.getElementById("generateBtn");
+
+dropzone.addEventListener("click", () => fileInput.click());
+dropzone.addEventListener("dragover", e => { e.preventDefault(); dropzone.classList.add("dragover"); });
+dropzone.addEventListener("dragleave", () => dropzone.classList.remove("dragover"));
+dropzone.addEventListener("drop", e => {
+  e.preventDefault();
+  dropzone.classList.remove("dragover");
+  addFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener("change", () => addFiles(fileInput.files));
+
+function addFiles(fileList) {
+  Array.from(fileList).forEach(file => {
+    if (!file.type.startsWith("image/")) return;
+    const id = counter++;
+    const url = URL.createObjectURL(file);
+    files.push({ file, url, id });
+    if (bgId === null) bgId = id;
+  });
+  renderPreviews();
+}
+
+function renderPreviews() {
+  previews.innerHTML = "";
+  files.forEach(f => {
+    const div = document.createElement("div");
+    div.className = "thumb" + (f.id === bgId ? " selected" : "");
+
+    const img = document.createElement("img");
+    img.src = f.url;
+    div.appendChild(img);
+
+    const badge = document.createElement("div");
+    badge.className = "bg-badge";
+    badge.textContent = f.id === bgId ? "★ Fond" : "Fond";
+    badge.addEventListener("click", () => { bgId = f.id; renderPreviews(); });
+    div.appendChild(badge);
+
+    const remove = document.createElement("div");
+    remove.className = "remove";
+    remove.textContent = "×";
+    remove.addEventListener("click", () => {
+      files = files.filter(x => x.id !== f.id);
+      if (bgId === f.id) bgId = files.length ? files[0].id : null;
+      renderPreviews();
+    });
+    div.appendChild(remove);
+
+    previews.appendChild(div);
+  });
+  generateBtn.disabled = files.length === 0;
+}
+
+// ---------- Resize ----------
+function resizeToBlob(file) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      let { width, height } = img;
+      if (Math.max(width, height) > MAX_DIM) {
+        if (width >= height) {
+          height = Math.round(height * MAX_DIM / width);
+          width = MAX_DIM;
+        } else {
+          width = Math.round(width * MAX_DIM / height);
+          height = MAX_DIM;
+        }
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, width, height);
+      canvas.toBlob(blob => resolve(blob), "image/jpeg", QUALITY);
+    };
+    img.onerror = reject;
+    img.src = URL.createObjectURL(file);
+  });
+}
+
+function escapeJs(str) {
+  return str.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+}
+
+// ---------- Generate ----------
+generateBtn.addEventListener("click", async () => {
+  const genError = document.getElementById("genError");
+  genError.style.display = "none";
+
+  const titre = document.getElementById("titre").value.trim();
+  const titreFr = document.getElementById("titreCarouselFr").value.trim();
+  const titreEn = document.getElementById("titreCarouselEn").value.trim();
+  const eventId = parseInt(document.getElementById("eventId").value, 10);
+
+  if (!titre || !titreFr || !titreEn || !eventId || bgId === null) {
+    genError.textContent = "Remplis le titre, les deux noms de carrousel, le numéro d'événement, et choisis une photo de fond.";
+    genError.style.display = "block";
+    return;
+  }
+
+  generateBtn.disabled = true;
+  generateBtn.textContent = "Génération en cours...";
+
+  const zip = new JSZip();
+  const folder = zip.folder(`medias/Soiree/${eventId}`);
+
+  const bgFile = files.find(f => f.id === bgId);
+  const others = files.filter(f => f.id !== bgId);
+
+  const bgBlob = await resizeToBlob(bgFile.file);
+  folder.file("Thumbnail.jpg", bgBlob);
+
+  const mediaLines = [`{ type: "img", src: "./medias/Soiree/${eventId}/Thumbnail.jpg" }`];
+
+  let n = 1;
+  for (const f of others) {
+    const blob = await resizeToBlob(f.file);
+    const name = `img${n}.jpg`;
+    folder.file(name, blob);
+    mediaLines.push(`{ type: "img", src: "./medias/Soiree/${eventId}/${name}" }`);
+    n++;
+  }
+
+  const zipBlob = await zip.generateAsync({ type: "blob" });
+  const zipName = `Soiree-${eventId}.zip`;
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(zipBlob);
+  a.download = zipName;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  document.getElementById("snippetEventJs").textContent =
+`    ${eventId}: {
+        title: "${escapeJs(titre)}",
+        medias: [
+            ${mediaLines.join(",\n            ")}
+        ]
+    },`;
+
+  document.getElementById("snippetCss").textContent =
+`#soiree-hero${eventId}{
+    background-image: url('medias/Soiree/${eventId}/Thumbnail.jpg');
+}
+#E${eventId}{
+    background-image: url(medias/Soiree/${eventId}/Thumbnail.jpg);
+}`;
+
+  document.getElementById("snippetFr").textContent = `"${escapeJs(titreFr)}",`;
+  document.getElementById("snippetEn").textContent = `"${escapeJs(titreEn)}",`;
+  document.getElementById("zipName").textContent = zipName;
+
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+
+  generateBtn.disabled = false;
+  generateBtn.textContent = "Générer le ZIP et le code";
+});
+
+// ---------- Copy buttons ----------
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("copy-btn")) {
+    const target = document.getElementById(e.target.dataset.target);
+    navigator.clipboard.writeText(target.textContent);
+    const original = e.target.textContent;
+    e.target.textContent = "Copié !";
+    setTimeout(() => { e.target.textContent = original; }, 1500);
+  }
+});
+</script>
+</body>
+</html>
