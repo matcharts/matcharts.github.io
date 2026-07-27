@@ -65,6 +65,13 @@ z-index: 0;
     background-image: url('medias/Soiree/10/Thumbnail.jpg'); 
 }
 
+#soiree-hero8{
+    background-image: url('medias/Soiree/8/Thumbnail.jpg');
+}
+#E8{
+    background-image: url(medias/Soiree/8/Thumbnail.jpg);
+}
+
 
 .soiree-hero {
     height: 100vh;
