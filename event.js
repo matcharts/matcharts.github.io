@@ -216,7 +216,24 @@ const eventsData = {
             { type: "img", src: "./medias/Soiree/7/vieux-port.jpg" },
             { type: "img", src: "./medias/Soiree/7/winnies.jpg" }
         ]
-    }
+    },
+        8: {
+        title: "Flying Too Close to the Sun",
+        medias: [
+            { type: "img", src: "./medias/Soiree/8/Thumbnail.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img1.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img2.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img3.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img4.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img5.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img6.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img7.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img8.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img9.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img10.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img11.jpg" },
+            { type: "img", src: "./medias/Soiree/8/img12.jpg" }
+        ]
     
 };
 
